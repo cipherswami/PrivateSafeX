@@ -1,31 +1,25 @@
 @echo off
 title "Confidenetial Folder"
 cls 
-C:
-cd\
-cd ProgramData
-if EXIST _ goto MAIN
-if NOT EXIST _ goto STARTING
+cd C:\ProgramData
+if EXIST PrivateSafeX goto MAIN
+if NOT EXIST PrivateSafeX goto FRESH_START
+
 :MAIN
+cd C:\ProgramData\PrivateSafeX
 cls
 color 3f
 echo                                              (TO CHANGE PASSWORD "*new#" )
 echo.
 echo                   Please ENTER the password.
-set/p "pass=>"
-cd/
-C:
-cd ProgramData
-cd _\_\_
+set/p "pass=Password: "
 if exist %pass% goto OPEN
 if %pass% == *new# goto CHANGEPASS
 if %pass% == *NEW# goto CHANGEPASS
 goto WRONGPASS
+
 :WRONGPASS
-cd/
-C:
-cd ProgramData
-cd _\_\_
+cd C:\ProgramData\PrivateSafeX
 cls
 color fc
 echo                                               (TO CHANGE PASSWORD "*new#" )
@@ -33,26 +27,31 @@ ECHO.
 ECHO.
 echo                         WORNG PASSWORD !!!!
 echo                  Please ENTER the correct password.
-set/p "pass=>"
-cd/
-C:
-cd ProgramData
-cd _\_\_
+set/p "pass=Password: "
 if exist %pass% goto OPEN
 if %pass% == *new# goto CHANGEPASS
 if %pass% == *NEW# goto CHANGEPASS
 goto WRONGPASS
+
 :OPEN
-cd\
-C:
-cd ProgramData
-cd _\_\_\_\_\_\_\_
+cls
+color 3f
+echo.
+echo.
+cd C:\ProgramData\PrivateSafeX\.{21EC2020-3AEA-1069-A2DD-08002B30309D}
+attrib -h /s /d
+echo [#] Decrypetion successful.
+echo.
+cd C:\ProgramData\PrivateSafeX\.{21EC2020-3AEA-1069-A2DD-08002B30309D}
 start .
+echo [#] Press any key to Encrypt again and close.
+pause >nul
+cd C:\ProgramData\PrivateSafeX\.{21EC2020-3AEA-1069-A2DD-08002B30309D}
+attrib +h /s /d
 exit
+
 :CHANGEPASS
-cd\
-C:
-cd ProgramData
+cd C:\ProgramData\PrivateSafeX
 cls
 color e6
 echo.
@@ -60,13 +59,11 @@ echo.
 echo.
 echo                  PLEASE ENTER THE OLD PASSWORD !
 set/p "chpass=>"
-cd\
-C:
-cd ProgramData
-cd _/_/_
 if exist %chpass% goto SCHPASS
 if not exist %chpass% goto WPASS
+
 :WPASS
+cd C:\ProgramData\PrivateSafeX
 cls
 ECHO.
 ECHO.
@@ -74,34 +71,26 @@ ECHO.
 ECHO          YOU HAVE ENTERED THE OLD PASSWORD, WRONG !!!
 ECHO            PLEASE ENTER THE CORRECT OLD PASSWORD !
 set/p "chpass=>"
-cd\
-C:
-cd ProgramData
-cd _/_/_
 if exist %chpass% goto SCHPASS
 if not exist %chpass% goto WPASS
 exit
+
 :SCHPASS
+cd C:\programData\PrivateSafeX
 attrib -s -h %chpass%
 rd %chpass%
 goto NEWPASS
 exit
+
 :NEWPASS
-cd\
-C:
-cd ProgramData
+cd C:\programData\PrivateSafeX
 cls
 color f2
 echo.
 echo.
-echo.
-echo.
 echo                  PLEASE SET THE NEW PASSWORD !!!
-SET/p "newpass=>"
-cd\
-C:
-cd ProgramData
-cd _\_\_
+echo.
+SET/p "newpass=New Password: "
 md %newpass%
 attrib +s +h %newpass%
 cls
@@ -130,183 +119,28 @@ ECHO.
 ECHO                                              (PRESS ANY KEY....)
 pause>nul
 goto main
-:STARTING
-cd\
-C:
-cd ProgramData
-cls
+
+:FRESH_START
 @echo off
 color 02
 set loopcount=500
 :loop
 echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
 set /a loopcount=loopcount-1
-if %loopcount%==0 goto exitmatrix
+if %loopcount%==0 goto END_MATRIX
 goto loop
-:exitmatrix
-cd\
-C:
-cd programData
-md "_"
-attrib -r "_"
-cd "_"
-echo ::    Creator:~ Arvind (cybertron.co.Ltd) >> desktop.ini
-echo [.ShellClassInfo] >> desktop.ini
-echo IconResource=C:\Windows\system32\SHELL32.dll,49 >> desktop.ini
-echo [ViewState] >> desktop.ini
-echo Mode= >> desktop.ini
-echo Vid= >> desktop.ini
-echo FolderType=Pictures >> desktop.ini
-attrib +R +H desktop.ini
-cd..
-attrib +s +h +r _
-cd _
-echo ERROR > startUP.exe
-echo error > RUNCore.mui
-echo error > Bootmrg.mui
-echo error > xbased100342.dll
-echo error > xbased012030.dll
-echo error > xbased452025.dll
-md _
-attrib -r "_"
-cd "_"
-echo ::    Creator:~ Arvind (cybertron.co.Ltd) >> desktop.ini
-echo [.ShellClassInfo] >> desktop.ini
-echo IconResource=C:\Windows\system32\SHELL32.dll,49 >> desktop.ini
-echo [ViewState] >> desktop.ini
-echo Mode= >> desktop.ini
-echo Vid= >> desktop.ini
-echo FolderType=Pictures >> desktop.ini
-attrib +R +H desktop.ini
-cd..
-attrib +s +h +r _
-cd _
-echo ERROR > startUP.exe
-echo error > RUNCore.mui
-echo error > Bootmrg.mui
-echo error > xbased100342.dll
-echo error > xbased012030.dll
-echo error > xbased452025.dll
-md _
-attrib -r "_"
-cd "_"
-echo ::    Creator:~ Arvind (cybertron.co.Ltd) >> desktop.ini
-echo [.ShellClassInfo] >> desktop.ini
-echo IconResource=C:\Windows\system32\SHELL32.dll,49 >> desktop.ini
-echo [ViewState] >> desktop.ini
-echo Mode= >> desktop.ini
-echo Vid= >> desktop.ini
-echo FolderType=Pictures >> desktop.ini
-attrib +R +H desktop.ini
-cd..
-attrib +s +h +r _
-cd _
-md backdoor@9553003485
-attrib -r backdoor@9553003485
-cd backdoor@9553003485
-echo ::    Creator:~ Arvind (cybertron.co.Ltd) >> desktop.ini
-echo [.ShellClassInfo] >> desktop.ini
-echo IconResource=C:\Windows\system32\SHELL32.dll,77 >> desktop.ini
-echo [ViewState] >> desktop.ini
-echo Mode= >> desktop.ini
-echo Vid= >> desktop.ini
-echo FolderType=Pictures >> desktop.ini
-attrib +R +H desktop.ini
-cd..
-attrib +s +r backdoor@9553003485
-echo ERROR > startUP.exe
-echo error > RUNCore.mui
-echo error > Bootmrg.mui
-echo error > xbased100342.dll
-echo error > xbased012030.dll
-echo error > xbased452025.dll
-md _
-attrib -r "_"
-cd "_"
-echo ::    Creator:~ Arvind (cybertron.co.Ltd) >> desktop.ini
-echo [.ShellClassInfo] >> desktop.ini
-echo IconResource=C:\Windows\system32\SHELL32.dll,49 >> desktop.ini
-echo [ViewState] >> desktop.ini
-echo Mode= >> desktop.ini
-echo Vid= >> desktop.ini
-echo FolderType=Pictures >> desktop.ini
-attrib +R +H desktop.ini
-cd..
-attrib +s +h +r _
-cd _
-echo ERROR > startUP.exe
-echo error > RUNCore.mui
-echo error > Bootmrg.mui
-echo error > xbased100342.dll
-echo error > xbased012030.dll
-echo error > xbased452025.dll
-md _
-attrib -r "_"
-cd "_"
-echo ::    Creator:~ Arvind (cybertron.co.Ltd) >> desktop.ini
-echo [.ShellClassInfo] >> desktop.ini
-echo IconResource=C:\Windows\system32\SHELL32.dll,49 >> desktop.ini
-echo [ViewState] >> desktop.ini
-echo Mode= >> desktop.ini
-echo Vid= >> desktop.ini
-echo FolderType=Pictures >> desktop.ini
-attrib +R +H desktop.ini
-cd..
-attrib +s +h +r _
-cd _
-echo ERROR > startUP.exe
-echo error > RUNCore.mui
-echo error > Bootmrg.mui
-echo error > xbased100342.dll
-echo error > xbased012030.dll
-echo error > xbased452025.dll
-md _
-attrib -r "_"
-cd "_"
-echo ::    Creator:~ Arvind (cybertron.co.Ltd) >> desktop.ini
-echo [.ShellClassInfo] >> desktop.ini
-echo IconResource=C:\Windows\system32\SHELL32.dll,49 >> desktop.ini
-echo [ViewState] >> desktop.ini
-echo Mode= >> desktop.ini
-echo Vid= >> desktop.ini
-echo FolderType=Pictures >> desktop.ini
-attrib +R +H desktop.ini
-cd..
-attrib +s +h +r _
-cd _
-echo ERROR > startUP.exe
-echo error > RUNCore.mui
-echo error > Bootmrg.mui
-echo error > xbased100342.dll
-echo error > xbased012030.dll
-echo error > xbased452025.dll
-md _
-attrib -r "_"
-cd "_"
-echo ::    Creator:~ Arvind (cybertron.co.Ltd) >> desktop.ini
-echo [.ShellClassInfo] >> desktop.ini
-echo IconResource=C:\Windows\system32\SHELL32.dll,49 >> desktop.ini
-echo [ViewState] >> desktop.ini
-echo Mode= >> desktop.ini
-echo Vid= >> desktop.ini
-echo FolderType=Pictures >> desktop.ini
-attrib +R +H desktop.ini
-cd..
-attrib +s +h +r _
-cd _
-md _
-attrib -r "_"
-cd "_"
-echo ::    Creator:~ Arvind (cybertron.co.Ltd) >> desktop.ini
-echo [.ShellClassInfo] >> desktop.ini
-echo IconResource=C:\Windows\system32\SHELL32.dll,49 >> desktop.ini
-echo [ViewState] >> desktop.ini
-echo Mode= >> desktop.ini
-echo Vid= >> desktop.ini
-echo FolderType=Pictures >> desktop.ini
-attrib +R +H desktop.ini
-cd..
-attrib +s +h +r _
+
+:END_MATRIX
+cd C:\programData
+md PrivateSafeX
+cd PrivateSafeX
+md .{21EC2020-3AEA-1069-A2DD-08002B30309D}
+attrib +s +h .{21EC2020-3AEA-1069-A2DD-08002B30309D}
+echo :: Creator:~ > Author.info
+echo Arvind Potluri >> Author.info
+echo Gmail: aravindswami135@gmail.com >> Author.info
+echo Github: https://github.com/name-is-cipher >> Author.info
+
 cls
 color 80
 echo.
@@ -328,6 +162,5 @@ echo.
 echo                                                  (PRESS ANY KEY...)
 pause >nul
 goto NEWPASS
+
 exit
-
-
